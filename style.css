@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1b1b1f;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.container {
+    width: 320px;
+    background: #232328;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.display {
+    grid-column: 1 / -1;
+    background: #16161a;
+    border-radius: 10px;
+    padding: 24px 16px;
+    margin-bottom: 4px;
+}
+
+.display p {
+    color: #f4f4f5;
+    font-family: "Courier New", monospace;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: right;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.clear {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 18px 0;
+    cursor: pointer;
+    transition: filter 0.15s ease, transform 0.05s ease;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+.clear button {
+    background: #3a3a42;
+    color: #e4e4e7;
+}
+
+.nums {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.nums button {
+    background: #2f2f36;
+    color: #f4f4f5;
+}
+
+.nums button[value="0"] {
+    grid-column: span 2;
+}
+
+.arithmetic {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.arithmetic button {
+    background: #d97706;
+    color: #1b1b1f;
+}
+
+.arithmetic button[data-action="equals"] {
+    grid-column: span 4;
+    background: #f59e0b;
+}
+
+button:hover {
+    filter: brightness(1.15);
+}
